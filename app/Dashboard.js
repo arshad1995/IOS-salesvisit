@@ -119,6 +119,7 @@ const Dashboard = ({navigation}) => {
   const [loginData, setLoginData] = useState(null);
 
   const [checkInModal, setCheckInModal] = useState(false);
+  const [proceedData, setProceedData] = useState(null);
 
   const containerStyle = {
     backgroundColor: 'white',
@@ -464,6 +465,7 @@ const Dashboard = ({navigation}) => {
   };
 
   const LogOut = async () => {
+    setLoading(true);
     const user = JSON.parse(await AsyncStorage.getItem('user_data'));
     const email = user?.userid;
     const loginId = JSON.parse(await AsyncStorage.getItem('user_loginid'));
@@ -482,13 +484,19 @@ const Dashboard = ({navigation}) => {
       body: JSON.stringify(option),
     })
       .then(async response => {
-        await AsyncStorage.removeItem('user_loginid');
-        await AsyncStorage.removeItem('user_data');
-        await AsyncStorage.removeItem('login_first_time');
-        navigation.dispatch(StackActions.replace('LoginScreen'));
+
+        setTimeout(()=>{
+          setLoading(false);
+          AsyncStorage.removeItem('user_loginid');
+          AsyncStorage.removeItem('user_data');
+          AsyncStorage.removeItem('login_first_time');
+          navigation.dispatch(StackActions.replace('LoginScreen'));
+        }, 2000)
+        
         LocationService.stopLocationUpdates();
       })
       .catch(error => {
+        setLoading(false);
         console.error(error);
       });
   };
@@ -611,6 +619,58 @@ const Dashboard = ({navigation}) => {
     setCheckInModal(false);
   };
 
+
+  const handleProceed = async() => {
+    setLoading(true);
+
+    const user = JSON.parse(await AsyncStorage.getItem('user_data'));
+    const email = user.userid;
+    const loginId = JSON.parse(await AsyncStorage.getItem('user_loginid'));
+
+    Geolocation.getCurrentPosition(
+      async position => {
+        const option = {
+          userid: email,
+          checkin_id: loginId,
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+
+        fetch('https://dev.telibrahma.in/salesvisit/getTempDistance', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(option),
+        })
+        .then(response => response.json())
+          .then(async response => {
+            console.log("response123", response)
+            setProceedData(response?.respText1)
+            setLoading(false);
+            setCheckInModal(true);
+          })
+          .catch(error => {
+            setLoading(false);
+            console.error(error);
+          });
+      },
+      error => {
+        console.log(error.code, error.message);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 25000,
+        interval: 25000,
+        distanceFilter: 5,
+        maximumAge: 0,
+        useSignificantChanges: false,
+        showsBackgroundLocationIndicator: true,
+      },
+    );
+  };
+
   return (
     <View style={{flex: 1, backgroundColor: '#ffffff'}}>
       <Loader loading={loading} />
@@ -658,7 +718,7 @@ const Dashboard = ({navigation}) => {
             }}
           />
           <Button
-            onPress={() => (data?.length > 0 ? setCheckInModal(true) : null)}
+            onPress={() => (data?.length > 0 ? handleProceed() : null)}
             style={{backgroundColor: '#7d0705'}}
             textColor={'#fff'}>
             PROCEED TO CHECK IN
@@ -844,9 +904,9 @@ const Dashboard = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 16, color: 'black', fontWeight: 'bold'}}>
-            Confirm if you have reached the destination and want to process to
-            check In?
+          <Text style={{fontSize: 16, color: 'black', fontWeight: 'bold'}}>{proceedData? proceedData:
+            `Confirm if you have reached the destination and want to process to
+            check In?`}
           </Text>
           <View
             style={{

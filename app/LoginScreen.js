@@ -202,6 +202,11 @@ const LoginScreen = ({navigation}) => {
               AsyncStorage.removeItem('user_save');
             }
           });
+          if(responseJson?.attenflag === 1){
+            AsyncStorage.setItem('mark_attendance', '1');
+          }else{
+            AsyncStorage.removeItem('mark_attendance');
+          }
           navigation.dispatch(StackActions.replace('Dashboard'));
         } else {
           setErrortext('Please enter valid Email or password');
