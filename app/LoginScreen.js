@@ -20,10 +20,12 @@ import {StackActions} from '@react-navigation/native';
 import Loader from './Loader';
 import Toast from 'react-native-simple-toast';
 import {check, PERMISSIONS, RESULTS} from 'react-native-permissions';
-import { requestLocationPermission, checkLocationServicesEnabled } from '../LocationPermissions';
+import {
+  requestLocationPermission,
+  checkLocationServicesEnabled,
+} from '../LocationPermissions';
 // import Geolocation from '@react-native-community/geolocation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -39,12 +41,10 @@ const LoginScreen = ({navigation}) => {
 
   const passwordInputRef = createRef();
 
-
   useEffect(() => {
     const initializeLocationServices = async () => {
       // await requestLocationPermission();
       // await checkLocationServicesEnabled();
-      
     };
 
     initializeLocationServices();
@@ -53,7 +53,6 @@ const LoginScreen = ({navigation}) => {
     //   LocationService.stopLocationUpdates();
     // };
   }, []);
-
 
   useEffect(() => {
     getUniqueId().then(uniqueId => {
@@ -164,7 +163,12 @@ const LoginScreen = ({navigation}) => {
     }
     setLoading(true);
     let versionId = getVersion();
-    let dataToSend = {userid: userEmail, pass: userPassword, imeino: deviceid, appversion: versionId };
+    let dataToSend = {
+      userid: userEmail,
+      pass: userPassword,
+      imeino: deviceid,
+      appversion: versionId,
+    };
 
     fetch('https://dev.telibrahma.in/salesvisit/userLogin', {
       method: 'POST',
@@ -176,7 +180,7 @@ const LoginScreen = ({navigation}) => {
     })
       .then(response => response.json())
       .then(responseJson => {
-        console.log("responseJson", responseJson)
+        console.log('responseJson', responseJson);
         setLoading(false);
         if (responseJson.respText === 'success') {
           // console.log('responseJson', responseJson);
@@ -192,7 +196,7 @@ const LoginScreen = ({navigation}) => {
           } else {
             AsyncStorage.setItem('user_loginid', '');
           }
-          let data = JSON.stringify(responseJson)
+          let data = JSON.stringify(responseJson);
           AsyncStorage.setItem('login_response', data);
           AsyncStorage.setItem('response_login', JSON.stringify(responseJson));
           AsyncStorage.setItem('user_data', JSON.stringify(dataToSend));
@@ -202,9 +206,9 @@ const LoginScreen = ({navigation}) => {
               AsyncStorage.removeItem('user_save');
             }
           });
-          if(responseJson?.attenflag === 1){
+          if (responseJson?.attenflag === 1) {
             AsyncStorage.setItem('mark_attendance', '1');
-          }else{
+          } else {
             AsyncStorage.removeItem('mark_attendance');
           }
           navigation.dispatch(StackActions.replace('Dashboard'));
@@ -213,7 +217,7 @@ const LoginScreen = ({navigation}) => {
         }
       })
       .catch(error => {
-        console.log("error", error)
+        console.log('error', error);
         setLoading(false);
       });
   };
@@ -221,7 +225,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.mainBody}>
       <Loader loading={loading} />
-      <ScrollView>
+      <ScrollView contentContainerStyle={{justifyContent: 'center', flex: 1}}>
         <View>
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
@@ -252,8 +256,11 @@ const LoginScreen = ({navigation}) => {
                 onSubmitEditing={() =>
                   passwordInputRef.current && passwordInputRef.current.focus()
                 }
-                underlineColorAndroid="#f000"
+                underlineColorAndroid="#000"
                 blurOnSubmit={false}
+                activeOutlineColor='black'
+                outlineColor='black'
+                textColor='black'
               />
             </View>
             <View style={styles.SectionStyle}>
@@ -274,20 +281,28 @@ const LoginScreen = ({navigation}) => {
                 secureTextEntry={secureTextEntry}
                 underlineColorAndroid="#f000"
                 returnKeyType="next"
+                activeOutlineColor='black'
+                outlineColor='black'
+                textColor='black'
               />
-                              <TouchableOpacity
-                  style={styles.eyeIcon}
-                  onPress={() => setSecureTextEntry(!secureTextEntry)}
-                >
-                  <Icon name={secureTextEntry ? 'visibility-off' : 'visibility'} size={24} color="gray" />
-                </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.eyeIcon}
+                onPress={() => setSecureTextEntry(!secureTextEntry)}>
+                <Icon
+                  name={secureTextEntry ? 'visibility-off' : 'visibility'}
+                  size={24}
+                  color="gray"
+                />
+              </TouchableOpacity>
             </View>
             <View style={styles.checkboxContainer}>
               <Checkbox.Android
                 status={!isSelected ? 'unchecked' : 'checked'}
                 onPress={() => setSelection(!isSelected)}
-                uncheckedColor="gray"
+                uncheckedColor="black"
                 //   style={{borderWidth: 1, borderColor: "gray", width: 30, height: 30, backgroundColor: "transparent"}}
+                style={{borderWidth: 1, borderColor: "gray",}}
+                color='black'
               />
               <Text style={styles.label}>Remember Me</Text>
             </View>
@@ -303,7 +318,9 @@ const LoginScreen = ({navigation}) => {
           </KeyboardAvoidingView>
         </View>
         {deviceid !== undefined || deviceid !== nulll ? (
-          <Text numberOfLines={2} style={styles.deviceId}>Device Id: {deviceid}</Text>
+          <Text numberOfLines={2} style={styles.deviceId}>
+            Device Id: {deviceid}
+          </Text>
         ) : null}
         <Text style={styles.appVersion}>Version {getVersion()}</Text>
       </ScrollView>
@@ -355,14 +372,16 @@ const styles = StyleSheet.create({
     flex: 1,
     color: 'black',
     height: 55,
-    borderColor: '#grey',
+    borderColor: 'black',
     backgroundColor: '#fff',
   },
   outlineStyle: {
-    borderColor: '#1976d2',
+    borderColor: 'black',
+    color: 'black',
   },
   underlineStyle: {
-    borderColor: 'grey',
+    borderColor: 'black',
+    color: 'black',
   },
   registerTextStyle: {
     color: '#FFFFFF',
@@ -383,7 +402,7 @@ const styles = StyleSheet.create({
   deviceId: {
     position: 'absolute',
     top: 0,
-    // left: 20,
+    left: 20,
     marginTop: 10,
     color: 'black',
     fontWeight: 'bold',
@@ -403,7 +422,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 18,
-    color: '#333', // Ensure the label color is visible
+    color: '#333',
     marginLeft: 8,
   },
   eyeIcon: {
