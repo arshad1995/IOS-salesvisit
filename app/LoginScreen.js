@@ -22,6 +22,7 @@ import Toast from 'react-native-simple-toast';
 import {check, PERMISSIONS, RESULTS} from 'react-native-permissions';
 import { requestLocationPermission, checkLocationServicesEnabled } from '../LocationPermissions';
 // import Geolocation from '@react-native-community/geolocation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -34,6 +35,7 @@ const LoginScreen = ({navigation}) => {
   const [errortext, setErrortext] = useState('');
   const [isSelected, setSelection] = useState(false);
   const [deviceid, setDeviceId] = useState('');
+  const [secureTextEntry, setSecureTextEntry] = useState(true); // Added state for password visibility
 
   const passwordInputRef = createRef();
 
@@ -214,13 +216,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.mainBody}>
       <Loader loading={loading} />
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{
-          flex: 1,
-          justifyContent: 'center',
-          alignContent: 'center',
-        }}>
+      <ScrollView>
         <View>
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
@@ -270,10 +266,16 @@ const LoginScreen = ({navigation}) => {
                 ref={passwordInputRef}
                 // onSubmitEditing={Keyboard.dismiss}
                 blurOnSubmit={false}
-                secureTextEntry={true}
+                secureTextEntry={secureTextEntry}
                 underlineColorAndroid="#f000"
                 returnKeyType="next"
               />
+                              <TouchableOpacity
+                  style={styles.eyeIcon}
+                  onPress={() => setSecureTextEntry(!secureTextEntry)}
+                >
+                  <Icon name={secureTextEntry ? 'visibility-off' : 'visibility'} size={24} color="gray" />
+                </TouchableOpacity>
             </View>
             <View style={styles.checkboxContainer}>
               <Checkbox.Android
@@ -296,7 +298,7 @@ const LoginScreen = ({navigation}) => {
           </KeyboardAvoidingView>
         </View>
         {deviceid !== undefined || deviceid !== nulll ? (
-          <Text style={styles.deviceId}>Device Id: {deviceid}</Text>
+          <Text numberOfLines={2} style={styles.deviceId}>Device Id: {deviceid}</Text>
         ) : null}
         <Text style={styles.appVersion}>Version {getVersion()}</Text>
       </ScrollView>
@@ -376,10 +378,11 @@ const styles = StyleSheet.create({
   deviceId: {
     position: 'absolute',
     top: 0,
-    left: 20,
+    // left: 20,
     marginTop: 10,
     color: 'black',
     fontWeight: 'bold',
+    flexWrap: 'wrap',
   },
   appVersion: {
     position: 'relative',
@@ -397,5 +400,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#333', // Ensure the label color is visible
     marginLeft: 8,
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 15,
+    top: 20,
   },
 });

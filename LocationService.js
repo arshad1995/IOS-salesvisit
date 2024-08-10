@@ -29,7 +29,7 @@ class LocationService {
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
       );
-    }, 10000);
+    }, 15000);
   }
 
   stopLocationUpdates() {

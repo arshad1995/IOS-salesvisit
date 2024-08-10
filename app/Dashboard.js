@@ -56,7 +56,7 @@ import {
   ScrollView,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
-// import BackgroundTimer from 'react-native-background-timer';
+import BackgroundTimer from 'react-native-background-timer';
 import {getUniqueId} from 'react-native-device-info';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {StackActions} from '@react-navigation/native';
@@ -453,10 +453,10 @@ const Dashboard = ({navigation}) => {
       });
       AsyncStorage.getItem('user_loginid').then(async user => {
         if (user === null) {
-          setLoading(true);
+          // setLoading(true);
           getFirstSession();
         } else {
-          setLoading(true);
+          // setLoading(true);
           await getPreviousSession(user);
         }
       });
@@ -500,12 +500,12 @@ const Dashboard = ({navigation}) => {
     const email = user.userid;
 
     const loginId = JSON.parse(await AsyncStorage.getItem('user_loginid'));
-    if (attend === 1) {
-      setWarning(true);
-      setTimeout(() => {
-        setWarning(false);
-      }, 3000);
-    } else {
+    // if (attend === 1) {
+    //   setWarning(true);
+    //   setTimeout(() => {
+    //     setWarning(false);
+    //   }, 3000);
+    // } else {
       Geolocation.getCurrentPosition(
         async position => {
           const option = {
@@ -534,6 +534,9 @@ const Dashboard = ({navigation}) => {
               setMarkOnClick(true);
               setSnakebar(true);
               await AsyncStorage.setItem('mark_attendance', '1');
+              setTimeout(()=>{
+                setSnakebar(false)
+              },2500)
             })
             .catch(error => {
               console.error(error);
@@ -552,7 +555,7 @@ const Dashboard = ({navigation}) => {
           showsBackgroundLocationIndicator: true,
         },
       );
-    }
+    // }
   };
 
   const attendanceMarkCheck = async () => {

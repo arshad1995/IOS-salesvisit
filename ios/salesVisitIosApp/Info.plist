@@ -2,10 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.transistorsoft.customtask </string>
+	</array>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>salesVisitIosApp</string>
+	<string>salesVisit</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,29 +25,39 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.0.2</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>1</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
-		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We use your location to show you relevant content whether the app is in use or running in the background.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location GPS Co-ordinates are being collected to track travel route precisely to cover the local conveyance expense. Minimize the application and start travelling</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We use your location to show you relevant content even when the app is in the background.</string>
+	<string>Your location GPS Co-ordinates are being collected to track travel route precisely to cover the local conveyance expense. Minimize the application and start travelling.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We use your location to show you relevant content.</string>
+	<string>Your location GPS Co-ordinates are being collected to track travel route precisely to cover the local conveyance expense. Minimize the application and start travelling.</string>
 	<key>UIAppFonts</key>
-	<string></string>
+		<array>
+		<string>FontAwesome.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>AntDesign.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

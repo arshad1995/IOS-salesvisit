@@ -13,6 +13,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		5514AD8716A45D3C25DE338F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CFC0E04603DFC22E5F89FFB6 /* PrivacyInfo.xcprivacy */; };
+		650AAB012C669D7400CF68B4 /* FontAwesome.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB002C669D7400CF68B4 /* FontAwesome.js */; };
+		650AAB032C669D8900CF68B4 /* MaterialCommunityIcons.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB022C669D8800CF68B4 /* MaterialCommunityIcons.js */; };
+		650AAB052C669D9500CF68B4 /* AntDesign.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB042C669D9500CF68B4 /* AntDesign.js */; };
+		650AAB072C669DA400CF68B4 /* MaterialIcons.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB062C669DA400CF68B4 /* MaterialIcons.js */; };
 		7699B88040F8A987B510C191 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -43,9 +47,13 @@
 		5709B34CF0A7D63546082F79 /* Pods-salesVisitIosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-salesVisitIosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-salesVisitIosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		650AAB002C669D7400CF68B4 /* FontAwesome.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = FontAwesome.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/FontAwesome.js"; sourceTree = "<group>"; };
+		650AAB022C669D8800CF68B4 /* MaterialCommunityIcons.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = MaterialCommunityIcons.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/MaterialCommunityIcons.js"; sourceTree = "<group>"; };
+		650AAB042C669D9500CF68B4 /* AntDesign.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = AntDesign.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/AntDesign.js"; sourceTree = "<group>"; };
+		650AAB062C669DA400CF68B4 /* MaterialIcons.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = MaterialIcons.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/MaterialIcons.js"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = salesVisitIosApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		CFC0E04603DFC22E5F89FFB6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = salesVisitIosApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CFC0E04603DFC22E5F89FFB6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = salesVisitIosApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				650AAAFF2C669D2900CF68B4 /* Fonts */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -109,6 +118,17 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		650AAAFF2C669D2900CF68B4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				650AAB062C669DA400CF68B4 /* MaterialIcons.js */,
+				650AAB042C669D9500CF68B4 /* AntDesign.js */,
+				650AAB022C669D8800CF68B4 /* MaterialCommunityIcons.js */,
+				650AAB002C669D7400CF68B4 /* FontAwesome.js */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -246,7 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650AAB072C669DA400CF68B4 /* MaterialIcons.js in Resources */,
+				650AAB032C669D8900CF68B4 /* MaterialCommunityIcons.js in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				650AAB052C669D9500CF68B4 /* AntDesign.js in Resources */,
+				650AAB012C669D7400CF68B4 /* FontAwesome.js in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				5514AD8716A45D3C25DE338F /* PrivacyInfo.xcprivacy in Resources */,
 			);
@@ -471,21 +495,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\n/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\nsalesVisit";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salesVisit.xcodeproj.--PRODUCT-NAME-rfc1034identifier-";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.salesVisit.xcodeproj;
 				PRODUCT_NAME = salesVisitIosApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -498,20 +528,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\n/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\nsalesVisit";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salesVisit.xcodeproj.--PRODUCT-NAME-rfc1034identifier-";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.salesVisit.xcodeproj;
 				PRODUCT_NAME = salesVisitIosApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

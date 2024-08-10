@@ -12,6 +12,8 @@
  node_require('react-native/scripts/react_native_pods.rb')
  node_require('react-native-permissions/scripts/setup.rb')
 
+ pod 'react-native-background-timer', :path => '../node_modules/react-native-background-timer'
+
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
