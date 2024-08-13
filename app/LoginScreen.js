@@ -183,7 +183,7 @@ const LoginScreen = ({navigation}) => {
         console.log('responseJson', responseJson);
         setLoading(false);
         if (responseJson.respText === 'success') {
-          // console.log('responseJson', responseJson);
+          console.log('responseJson', responseJson);
           if (isSelected === true) {
             AsyncStorage.setItem('user_save', JSON.stringify(dataToSend));
           }

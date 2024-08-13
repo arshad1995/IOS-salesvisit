@@ -120,6 +120,7 @@ const Dashboard = ({navigation}) => {
 
   const [checkInModal, setCheckInModal] = useState(false);
   const [proceedData, setProceedData] = useState(null);
+  const [attendanceMessage, setAttendanceMessage] =  useState('');
 
   const containerStyle = {
     backgroundColor: 'white',
@@ -259,7 +260,9 @@ const Dashboard = ({navigation}) => {
   };
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(()=>{
+      setLoading(false);
+    },30000)
   }, [loading]);
 
   const getFlag = async () => {
@@ -293,6 +296,8 @@ const Dashboard = ({navigation}) => {
           //   }, 10000);
           StartService();
         }
+      }else{
+        setLoading(false);
       }
     });
   };
@@ -416,8 +421,8 @@ const Dashboard = ({navigation}) => {
         })
           .then(response => response.json())
           .then(async response => {
-            console.log('previous', response);
             setLoading(false);
+            console.log('previous', response);
             await AsyncStorage.setItem('addData', 'success');
             const resp = [position];
             setData([{...resp, response: response.origin}]);
@@ -483,16 +488,21 @@ const Dashboard = ({navigation}) => {
       },
       body: JSON.stringify(option),
     })
+    .then((res)=> res.json())
       .then(async response => {
-
-        setTimeout(()=>{
-          setLoading(false);
+        console.log("logout", response)
+        setTimeout(() => {
           AsyncStorage.removeItem('user_loginid');
           AsyncStorage.removeItem('user_data');
           AsyncStorage.removeItem('login_first_time');
+          setLoading(false);
+          Toast.show(
+            response?.respText,
+            Toast.LONG,
+          );
           navigation.dispatch(StackActions.replace('LoginScreen'));
-        }, 2000)
-        
+        }, 1000);
+
         LocationService.stopLocationUpdates();
       })
       .catch(error => {
@@ -502,10 +512,12 @@ const Dashboard = ({navigation}) => {
   };
 
   const markAttendance = async () => {
+    setLoading(true);
     const attend = JSON.parse(await AsyncStorage.getItem('mark_attendance'));
 
     const user = JSON.parse(await AsyncStorage.getItem('user_data'));
     const email = user.userid;
+    console.log("user", user)
 
     const loginId = JSON.parse(await AsyncStorage.getItem('user_loginid'));
     // if (attend === 1) {
@@ -514,55 +526,60 @@ const Dashboard = ({navigation}) => {
     //     setWarning(false);
     //   }, 3000);
     // } else {
-      Geolocation.getCurrentPosition(
-        async position => {
-          const option = {
-            userid: email,
-            loginid: loginId,
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          };
+    Geolocation.getCurrentPosition(
+      async position => {
+        const option = {
+          username: email,
+          loginid: loginId,
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
 
-          fetch('https://dev.telibrahma.in/salesvisit/markAttendance', {
-            method: 'POST',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(option),
+        fetch('https://dev.telibrahma.in/salesvisit/markAttendance', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(option),
+        })
+        .then((res)=> res.json())
+          .then(async response => {
+            console.log("res attendance", response)
+            const attend = JSON.parse(
+              await AsyncStorage.getItem('mark_attendance'),
+            );
+            const resp = [position];
+            setAttendance(attend);
+            setIncrement(increment + 3);
+            setFirstTime(true);
+            setMarkOnClick(true);
+            setSnakebar(true);
+            await AsyncStorage.setItem('mark_attendance', '1');
+            setTimeout(() => {
+              setSnakebar(false);
+            }, 3000);
+            setAttendanceMessage(response?.respText)
+            setLoading(false);
           })
-            .then(async response => {
-              const attend = JSON.parse(
-                await AsyncStorage.getItem('mark_attendance'),
-              );
-              const resp = [position];
-              setAttendance(attend);
-              setIncrement(increment + 3);
-              setFirstTime(true);
-              setMarkOnClick(true);
-              setSnakebar(true);
-              await AsyncStorage.setItem('mark_attendance', '1');
-              setTimeout(()=>{
-                setSnakebar(false)
-              },2500)
-            })
-            .catch(error => {
-              console.error(error);
-            });
-        },
-        error => {
-          console.log(error.code, error.message);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 25000,
-          interval: 25000,
-          distanceFilter: 5,
-          maximumAge: 0,
-          useSignificantChanges: false,
-          showsBackgroundLocationIndicator: true,
-        },
-      );
+          .catch(error => {
+            setLoading(false);
+            console.error(error);
+          });
+      },
+      error => {
+        console.log(error.code, error.message);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 25000,
+        interval: 25000,
+        distanceFilter: 5,
+        maximumAge: 0,
+        useSignificantChanges: false,
+        showsBackgroundLocationIndicator: true,
+      },
+    );
     // }
   };
 
@@ -575,10 +592,10 @@ const Dashboard = ({navigation}) => {
 
   const checkSession = async type => {
     if (type === 'new') {
-      await AsyncStorage.removeItem('user_loginid');
-      await autoDetect(true);
-      await hideModal();
-      await setLoading(true);
+       AsyncStorage.removeItem('user_loginid');
+       autoDetect(true);
+       hideModal();
+       setLoading(true);
     } else {
       autoDetect(true);
       hideModal();
@@ -619,8 +636,7 @@ const Dashboard = ({navigation}) => {
     setCheckInModal(false);
   };
 
-
-  const handleProceed = async() => {
+  const handleProceed = async () => {
     setLoading(true);
 
     const user = JSON.parse(await AsyncStorage.getItem('user_data'));
@@ -644,12 +660,14 @@ const Dashboard = ({navigation}) => {
           },
           body: JSON.stringify(option),
         })
-        .then(response => response.json())
+          .then(response => response.json())
           .then(async response => {
-            console.log("response123", response)
-            setProceedData(response?.respText1)
-            setLoading(false);
-            setCheckInModal(true);
+            console.log('response123', response);
+            setTimeout(() => {
+              setProceedData(response?.respText1);
+              setLoading(false);
+              setCheckInModal(true);
+            }, 3000);
           })
           .catch(error => {
             setLoading(false);
@@ -670,6 +688,8 @@ const Dashboard = ({navigation}) => {
       },
     );
   };
+
+  let ApiData = data.length === 0;
 
   return (
     <View style={{flex: 1, backgroundColor: '#ffffff'}}>
@@ -719,7 +739,8 @@ const Dashboard = ({navigation}) => {
           />
           <Button
             onPress={() => (data?.length > 0 ? handleProceed() : null)}
-            style={{backgroundColor: '#7d0705'}}
+            style={{backgroundColor: ApiData ? 'gray' : '#7d0705'}}
+            disabled={ApiData}
             textColor={'#fff'}>
             PROCEED TO CHECK IN
           </Button>
@@ -731,9 +752,12 @@ const Dashboard = ({navigation}) => {
               backgroundColor:
                 attendance === 1 || markOnClick === true
                   ? '#0bfa02'
+                  : ApiData
+                  ? 'gray'
                   : '#7d0705',
             }}
-            textColor={'#fff'}>
+            textColor={'#fff'}
+            disabled={ApiData}>
             MARK ATTENDANCE FOR THE DAY
           </Button>
         </View>
@@ -831,7 +855,7 @@ const Dashboard = ({navigation}) => {
       <FAB.Group
         open={open}
         label={'sign out'}
-        visible
+        visible={!ApiData}
         icon={''}
         actions={[
           {
@@ -855,7 +879,7 @@ const Dashboard = ({navigation}) => {
           label: '',
           onPress: () => setSnakebar(false),
         }}>
-        Attendance is marked for today
+        {attendanceMessage !== '' ? attendanceMessage:'Attendance is marked for today'}
       </Snackbar>
       <Snackbar
         visible={warning}
@@ -904,8 +928,10 @@ const Dashboard = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 16, color: 'black', fontWeight: 'bold'}}>{proceedData? proceedData:
-            `Confirm if you have reached the destination and want to process to
+          <Text style={{fontSize: 16, color: 'black', fontWeight: 'bold'}}>
+            {proceedData
+              ? proceedData
+              : `Confirm if you have reached the destination and want to process to
             check In?`}
           </Text>
           <View

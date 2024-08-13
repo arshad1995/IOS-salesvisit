@@ -497,7 +497,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
@@ -530,7 +530,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\n/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\nsalesVisit";
