@@ -508,7 +508,7 @@ const Dashboard = ({navigation}) => {
                 Toast.LONG,
               );
               navigation.dispatch(StackActions.replace('LoginScreen'));
-            }, 1000);
+            }, 500);
     
             LocationService.stopLocationUpdates();
           })
