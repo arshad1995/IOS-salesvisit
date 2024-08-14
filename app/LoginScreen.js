@@ -44,7 +44,7 @@ const LoginScreen = ({navigation}) => {
   useEffect(() => {
     const initializeLocationServices = async () => {
       // await requestLocationPermission();
-      // await checkLocationServicesEnabled();
+      await checkLocationServicesEnabled();
     };
 
     initializeLocationServices();

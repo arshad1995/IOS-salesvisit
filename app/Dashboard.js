@@ -480,35 +480,55 @@ const Dashboard = ({navigation}) => {
       loginid: loginId,
     };
 
-    fetch('https://dev.telibrahma.in/salesvisit/logout', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+    Geolocation.getCurrentPosition(
+      position => {
+        const option = {
+          username: email,
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+        fetch('https://dev.telibrahma.in/salesvisit/insertLogoutLog', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(option),
+        })
+          .then(response => response.json())
+          .then(async response => {
+            console.log("logout", response)
+            setTimeout(() => {
+              AsyncStorage.removeItem('user_loginid');
+              AsyncStorage.removeItem('user_data');
+              AsyncStorage.removeItem('login_first_time');
+              setLoading(false);
+              Toast.show(
+                response?.respText,
+                Toast.LONG,
+              );
+              navigation.dispatch(StackActions.replace('LoginScreen'));
+            }, 1000);
+    
+            LocationService.stopLocationUpdates();
+          })
+          .catch(error => {
+            setLoading(false);
+          });
       },
-      body: JSON.stringify(option),
-    })
-    .then((res)=> res.json())
-      .then(async response => {
-        console.log("logout", response)
-        setTimeout(() => {
-          AsyncStorage.removeItem('user_loginid');
-          AsyncStorage.removeItem('user_data');
-          AsyncStorage.removeItem('login_first_time');
-          setLoading(false);
-          Toast.show(
-            response?.respText,
-            Toast.LONG,
-          );
-          navigation.dispatch(StackActions.replace('LoginScreen'));
-        }, 1000);
-
-        LocationService.stopLocationUpdates();
-      })
-      .catch(error => {
-        setLoading(false);
-        console.error(error);
-      });
+      error => {
+        console.log(error.code, error.message);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 25000,
+        interval: 25000,
+        distanceFilter: 5,
+        maximumAge: 0,
+        useSignificantChanges: false,
+        showsBackgroundLocationIndicator: true,
+      },
+    );
   };
 
   const markAttendance = async () => {
@@ -663,11 +683,9 @@ const Dashboard = ({navigation}) => {
           .then(response => response.json())
           .then(async response => {
             console.log('response123', response);
-            setTimeout(() => {
               setProceedData(response?.respText1);
-              setLoading(false);
               setCheckInModal(true);
-            }, 3000);
+              setLoading(false);
           })
           .catch(error => {
             setLoading(false);
