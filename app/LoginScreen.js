@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Dimensions,
+  AppState
 } from 'react-native';
 import {TextInput, Checkbox} from 'react-native-paper';
 // import CheckBox from '@react-native-community/checkbox';
@@ -19,13 +20,14 @@ import {getUniqueId, getVersion} from 'react-native-device-info';
 import {StackActions} from '@react-navigation/native';
 import Loader from './Loader';
 import Toast from 'react-native-simple-toast';
-import {check, PERMISSIONS, RESULTS} from 'react-native-permissions';
+import {check, PERMISSIONS, RESULTS, request} from 'react-native-permissions';
 import {
   requestLocationPermission,
   checkLocationServicesEnabled,
 } from '../LocationPermissions';
 // import Geolocation from '@react-native-community/geolocation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { requestTrackingPermission } from 'react-native-tracking-transparency';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -44,15 +46,44 @@ const LoginScreen = ({navigation}) => {
   useEffect(() => {
     const initializeLocationServices = async () => {
       // await requestLocationPermission();
-      await checkLocationServicesEnabled();
+      // await checkLocationServicesEnabled();
     };
 
-    initializeLocationServices();
+    // initializeLocationServices();
+    handleAppStateChange();
 
     // return () => {
     //   LocationService.stopLocationUpdates();
     // };
   }, []);
+
+  const handleAppStateChange = async (nextAppState) => {
+    console.log("staus", nextAppState)
+
+      const status = await requestTrackingPermission();
+      console.log("staus", status)
+      if (status === 'authorized') {
+        await checkLocationServicesEnabled();
+      }
+  };
+
+
+
+  const checkPermission = async () => {
+    const status = await check(PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY);
+    if (status !== RESULTS.GRANTED) {
+      requestPermission();
+    }
+  };
+
+  const requestPermission = async () => {
+    const result = await request(PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY);
+    if (result === RESULTS.GRANTED) {
+      // Alert.alert('Permission granted', 'Thank you for granting permission.');
+    } else {
+      // Alert.alert('Permission denied', 'Tracking permission is needed for the app functionality.');
+    }
+  };
 
   useEffect(() => {
     getUniqueId().then(uniqueId => {

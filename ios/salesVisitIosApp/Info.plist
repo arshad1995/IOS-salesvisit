@@ -39,6 +39,8 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We need your permission to track your activities to ensure accurate location-based attendance tracking and background location updates. This tracking is essential for verifying work attendance and travel routes for Jeftechno personnel. Your data is used exclusively for these purposes and is handled with the utmost privacy and security.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Your location GPS Co-ordinates are being collected to track travel route precisely to cover the local conveyance expense. Minimize the application and start travelling</string>
 	<key>NSLocationAlwaysUsageDescription</key>
