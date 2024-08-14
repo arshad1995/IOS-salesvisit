@@ -575,12 +575,13 @@ const Dashboard = ({navigation}) => {
             setFirstTime(true);
             setMarkOnClick(true);
             setSnakebar(true);
-            await AsyncStorage.setItem('mark_attendance', '1');
+            AsyncStorage.setItem('mark_attendance', '1');
+
+            setAttendanceMessage(response?.respText)
+            setLoading(false);
             setTimeout(() => {
               setSnakebar(false);
             }, 3000);
-            setAttendanceMessage(response?.respText)
-            setLoading(false);
           })
           .catch(error => {
             setLoading(false);
@@ -775,7 +776,7 @@ const Dashboard = ({navigation}) => {
                   : '#7d0705',
             }}
             textColor={'#fff'}
-            disabled={ApiData}>
+            disabled={ApiData || snakebar}>
             MARK ATTENDANCE FOR THE DAY
           </Button>
         </View>
