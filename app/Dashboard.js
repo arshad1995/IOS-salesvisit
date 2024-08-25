@@ -574,11 +574,11 @@ const Dashboard = ({navigation}) => {
             setIncrement(increment + 3);
             setFirstTime(true);
             setMarkOnClick(true);
+            setAttendanceMessage(response?.respText)
+            setLoading(false);
             setSnakebar(true);
             AsyncStorage.setItem('mark_attendance', '1');
 
-            setAttendanceMessage(response?.respText)
-            setLoading(false);
             setTimeout(() => {
               setSnakebar(false);
             }, 3000);
@@ -685,8 +685,9 @@ const Dashboard = ({navigation}) => {
           .then(async response => {
             console.log('response123', response);
               setProceedData(response?.respText1);
-              setCheckInModal(true);
               setLoading(false);
+              setCheckInModal(true);
+
           })
           .catch(error => {
             setLoading(false);
@@ -759,7 +760,7 @@ const Dashboard = ({navigation}) => {
           <Button
             onPress={() => (data?.length > 0 ? handleProceed() : null)}
             style={{backgroundColor: ApiData ? 'gray' : '#7d0705'}}
-            disabled={ApiData}
+            disabled={ApiData || checkInModal}
             textColor={'#fff'}>
             PROCEED TO CHECK IN
           </Button>
