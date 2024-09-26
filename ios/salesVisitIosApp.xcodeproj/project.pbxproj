@@ -11,14 +11,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4F9F16DADD2CBD0C32A917AE /* libPods-salesVisitIosApp-salesVisitIosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2325BE267BA85C465378DB44 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */; };
 		650AAB012C669D7400CF68B4 /* FontAwesome.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB002C669D7400CF68B4 /* FontAwesome.js */; };
 		650AAB032C669D8900CF68B4 /* MaterialCommunityIcons.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB022C669D8800CF68B4 /* MaterialCommunityIcons.js */; };
 		650AAB052C669D9500CF68B4 /* AntDesign.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB042C669D9500CF68B4 /* AntDesign.js */; };
 		650AAB072C669DA400CF68B4 /* MaterialIcons.js in Resources */ = {isa = PBXBuildFile; fileRef = 650AAB062C669DA400CF68B4 /* MaterialIcons.js */; };
 		6569CE292C6768F5008640B1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		965CBE9C29733EB1E4A41CCB /* libPods-salesVisitIosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20533EC5229E89353CCE4D12 /* libPods-salesVisitIosApp.a */; };
+		876353B3E89112209FA255AA /* libPods-salesVisitIosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCCA95D432BE6EBB64A2B16 /* libPods-salesVisitIosApp.a */; };
+		BF2A4480BB98621CFB48B0E5 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8121EEC38AFDA19B5F2F041C /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 		00E356EE1AD99517003FC87E /* salesVisitIosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = salesVisitIosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* salesVisitIosAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = salesVisitIosAppTests.m; sourceTree = "<group>"; };
-		03510A6AB4627B40601CE098 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* salesVisitIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = salesVisitIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = salesVisitIosApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = salesVisitIosApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -43,18 +42,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = salesVisitIosApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = salesVisitIosApp/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = salesVisitIosApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		20533EC5229E89353CCE4D12 /* libPods-salesVisitIosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-salesVisitIosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2325BE267BA85C465378DB44 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-salesVisitIosApp-salesVisitIosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46875770FF13B3C75C75E7B2 /* Pods-salesVisitIosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp.release.xcconfig"; sourceTree = "<group>"; };
+		3DCB40AF0A49CC1BD04A0409 /* Pods-salesVisitIosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp.release.xcconfig"; sourceTree = "<group>"; };
 		650AAB002C669D7400CF68B4 /* FontAwesome.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = FontAwesome.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/FontAwesome.js"; sourceTree = "<group>"; };
 		650AAB022C669D8800CF68B4 /* MaterialCommunityIcons.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = MaterialCommunityIcons.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/MaterialCommunityIcons.js"; sourceTree = "<group>"; };
 		650AAB042C669D9500CF68B4 /* AntDesign.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = AntDesign.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/AntDesign.js"; sourceTree = "<group>"; };
 		650AAB062C669DA400CF68B4 /* MaterialIcons.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = MaterialIcons.js; path = "../../salesvisitIOS/node_modules/react-native-vector-icons/MaterialIcons.js"; sourceTree = "<group>"; };
-		789D630E06FE0974C4CC327A /* Pods-salesVisitIosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp.debug.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6D628EF8C1BB47C750C88537 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8121EEC38AFDA19B5F2F041C /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-salesVisitIosApp-salesVisitIosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = salesVisitIosApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AC5B8E04805027A2273F27E /* Pods-salesVisitIosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp.debug.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		ADCCA95D432BE6EBB64A2B16 /* libPods-salesVisitIosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-salesVisitIosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC0E04603DFC22E5F89FFB6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = salesVisitIosApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E629AF2B97A3B315361FF72D /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FC4B4E440CE6D4A71BD63797 /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F9F16DADD2CBD0C32A917AE /* libPods-salesVisitIosApp-salesVisitIosAppTests.a in Frameworks */,
+				BF2A4480BB98621CFB48B0E5 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965CBE9C29733EB1E4A41CCB /* libPods-salesVisitIosApp.a in Frameworks */,
+				876353B3E89112209FA255AA /* libPods-salesVisitIosApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				20533EC5229E89353CCE4D12 /* libPods-salesVisitIosApp.a */,
-				2325BE267BA85C465378DB44 /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */,
+				ADCCA95D432BE6EBB64A2B16 /* libPods-salesVisitIosApp.a */,
+				8121EEC38AFDA19B5F2F041C /* libPods-salesVisitIosApp-salesVisitIosAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,10 +165,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				789D630E06FE0974C4CC327A /* Pods-salesVisitIosApp.debug.xcconfig */,
-				46875770FF13B3C75C75E7B2 /* Pods-salesVisitIosApp.release.xcconfig */,
-				FC4B4E440CE6D4A71BD63797 /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */,
-				03510A6AB4627B40601CE098 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */,
+				9AC5B8E04805027A2273F27E /* Pods-salesVisitIosApp.debug.xcconfig */,
+				3DCB40AF0A49CC1BD04A0409 /* Pods-salesVisitIosApp.release.xcconfig */,
+				E629AF2B97A3B315361FF72D /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */,
+				6D628EF8C1BB47C750C88537 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -180,12 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "salesVisitIosAppTests" */;
 			buildPhases = (
-				EA4C1C1DC43D6519C7A26E93 /* [CP] Check Pods Manifest.lock */,
+				B33A349C96336D35FCAF6AA4 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				7911B1CE26BB414F09E1C7A3 /* [CP] Embed Pods Frameworks */,
-				391E5DCAB7669C327980C92E /* [CP] Copy Pods Resources */,
+				856FA6FCCD1A894B4735F4F2 /* [CP] Embed Pods Frameworks */,
+				D76DCFB3C03C93A1575512EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,13 +201,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "salesVisitIosApp" */;
 			buildPhases = (
-				759242632D38995F59DFF616 /* [CP] Check Pods Manifest.lock */,
+				4C12BEF883BF13538BD5155B /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				B02D050720A05D6CE75837BC /* [CP] Embed Pods Frameworks */,
-				A035E1930B66818EC38F74C5 /* [CP] Copy Pods Resources */,
+				DFDA2D8D8D05CF5E0874B987 /* [CP] Embed Pods Frameworks */,
+				BD215831189B923CAAD7C907 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,24 +295,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		391E5DCAB7669C327980C92E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		759242632D38995F59DFF616 /* [CP] Check Pods Manifest.lock */ = {
+		4C12BEF883BF13538BD5155B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,7 +317,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7911B1CE26BB414F09E1C7A3 /* [CP] Embed Pods Frameworks */ = {
+		856FA6FCCD1A894B4735F4F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,41 +334,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A035E1930B66818EC38F74C5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B02D050720A05D6CE75837BC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA4C1C1DC43D6519C7A26E93 /* [CP] Check Pods Manifest.lock */ = {
+		B33A349C96336D35FCAF6AA4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -405,6 +354,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD215831189B923CAAD7C907 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D76DCFB3C03C93A1575512EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp-salesVisitIosAppTests/Pods-salesVisitIosApp-salesVisitIosAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFDA2D8D8D05CF5E0874B987 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-salesVisitIosApp/Pods-salesVisitIosApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -440,7 +440,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC4B4E440CE6D4A71BD63797 /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */;
+			baseConfigurationReference = E629AF2B97A3B315361FF72D /* Pods-salesVisitIosApp-salesVisitIosAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -467,7 +467,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03510A6AB4627B40601CE098 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */;
+			baseConfigurationReference = 6D628EF8C1BB47C750C88537 /* Pods-salesVisitIosApp-salesVisitIosAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -491,13 +491,13 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 789D630E06FE0974C4CC327A /* Pods-salesVisitIosApp.debug.xcconfig */;
+			baseConfigurationReference = 9AC5B8E04805027A2273F27E /* Pods-salesVisitIosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
@@ -524,13 +524,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46875770FF13B3C75C75E7B2 /* Pods-salesVisitIosApp.release.xcconfig */;
+			baseConfigurationReference = 3DCB40AF0A49CC1BD04A0409 /* Pods-salesVisitIosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 3TMKH3D73F;
 				INFOPLIST_FILE = salesVisitIosApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\n/Users/fci/salesvisitIOS/ios/salesVisit/AppDelegate.h:1:9 'RCTAppDelegate.h' file not found\nsalesVisit";
@@ -626,7 +626,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -698,7 +701,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

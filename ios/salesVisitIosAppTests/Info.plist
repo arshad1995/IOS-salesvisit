@@ -16,17 +16,21 @@
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-		<key>NSAppTransportSecurity</key>
+	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We need your permission to track your activities to ensure accurate location-based attendance tracking and background location updates. This tracking is essential for verifying work attendance and travel routes for Jeftechno personnel. Your data is used exclusively for these purposes and is handled with the utmost privacy and security.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We use your location to show you relevant content whether the app is in use or running in the background.</string>
 	<key>NSLocationAlwaysUsageDescription</key>

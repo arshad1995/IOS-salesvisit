@@ -50,6 +50,7 @@ const LoginScreen = ({navigation}) => {
     };
 
     // initializeLocationServices();
+    // checkPermission();
     handleAppStateChange();
 
     // return () => {
@@ -59,12 +60,12 @@ const LoginScreen = ({navigation}) => {
 
   const handleAppStateChange = async (nextAppState) => {
     console.log("staus", nextAppState)
-
-      const status = await requestTrackingPermission();
-      console.log("staus", status)
-      if (status === 'authorized') {
-        await checkLocationServicesEnabled();
-      }
+    await checkLocationServicesEnabled();
+      // const status = await requestTrackingPermission();
+      // console.log("requestTrackingPermission", status)
+      // if (status === 'authorized') {
+      //   await checkLocationServicesEnabled();
+      // }
   };
 
 
